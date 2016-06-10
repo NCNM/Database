@@ -17,10 +17,10 @@ CONSTRAINT PKey_OFFICER
 PRIMARY KEY (ID)
 );
 
-
 CREATE TABLE INMATE
 (
 ID VARCHAR(10),
+Photo NVARCHAR(512),
 Lastname NVARCHAR(20),
 Midname NVARCHAR(20),
 Firstname NVARCHAR(20),
@@ -32,12 +32,12 @@ Eth NVARCHAR(10),
 Addr NVARCHAR(50),
 Reason NVARCHAR(50),
 Custody NVARCHAR(50),
+Availability NVARCHAR(5),
 BookIn DATETIME,
 BookOut DATETIME,
 CONSTRAINT PKey_INMATE
 PRIMARY KEY (ID)
 );
-
 
 CREATE TABLE RE_LATIVE
 (
@@ -189,10 +189,10 @@ INSERT `DUTY` (`OfficerID`, `DUTY_WeekDay`, `DUTY_Time`, `Remarks`) VALUES (N'ER
 INSERT `DUTY` (`OfficerID`, `DUTY_WeekDay`, `DUTY_Time`, `Remarks`) VALUES (N'HC002', CAST(N'2016-10-02' AS Date), CAST(N'10:00:00' AS Time), N'BT');
 INSERT `DUTY` (`OfficerID`, `DUTY_WeekDay`, `DUTY_Time`, `Remarks`) VALUES (N'MA005', CAST(N'2016-10-05' AS Date), CAST(N'10:00:00' AS Time), N'BT');
 INSERT `DUTY` (`OfficerID`, `DUTY_WeekDay`, `DUTY_Time`, `Remarks`) VALUES (N'RH004', CAST(N'2016-10-04' AS Date), CAST(N'10:00:00' AS Time), N'BT');
-INSERT `INMATE` (`ID`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `BookIn`, `BookOut`) VALUES (N'IM001', N'Nguyễn', N'Tuấn', N'Anh', N'Nam', CAST(N'1986-10-02' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT `INMATE` (`ID`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `BookIn`, `BookOut`) VALUES (N'IM002', N'Lê', N'Thị', N'Hoa', N'Nữ', CAST(N'1990-8-9' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT `INMATE` (`ID`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `BookIn`, `BookOut`) VALUES (N'IM003', N'Võ', N'Văn', N'Tuấn', N'Nam', CAST(N'1979-5-6' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT `INMATE` (`ID`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `BookIn`, `BookOut`) VALUES (N'IM004', N'Trần', N'Văn', N'Phú', N'Nam', CAST(N'1991-3-4' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT `INMATE` (`ID`, `Photo`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `Availability`, `BookIn`, `BookOut`) VALUES (N'IM001', NULL, N'Nguyễn', N'Tuấn', N'Anh', N'Nam', CAST(N'1986-10-02' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT `INMATE` (`ID`, `Photo`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `Availability`, `BookIn`, `BookOut`) VALUES (N'IM002', NULL, N'Lê', N'Thị', N'Hoa', N'Nữ', CAST(N'1990-8-9' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT `INMATE` (`ID`, `Photo`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `Availability`, `BookIn`, `BookOut`) VALUES (N'IM003', NULL, N'Võ', N'Văn', N'Tuấn', N'Nam', CAST(N'1979-5-6' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT `INMATE` (`ID`, `Photo`, `Lastname`, `Midname`, `Firstname`, `Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `Availability`, `BookIn`, `BookOut`) VALUES (N'IM004', NULL, N'Trần', N'Văn', N'Phú', N'Nam', CAST(N'1991-3-4' AS Date), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT `REHABILITATION` (`OfficerID`, `InmateID`, `R_level`, `Ludate`, `Talents`, `Recommendation`, `Reward`, `Remarks`) VALUES (N'MA005', N'IM002', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT `REHABILITATION` (`OfficerID`, `InmateID`, `R_level`, `Ludate`, `Talents`, `Recommendation`, `Reward`, `Remarks`) VALUES (N'RH004', N'IM001', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT `REPORT` (`ID`, `OfficerID`, `AccessLevel`, `RP_Date`, `Content`) VALUES (N'RP001', N'DI001', N'1', CAST(N'2016-10-02' AS Date), N'BÁO CÁO 1');
