@@ -131,6 +131,27 @@ ID VARCHAR(10) PRIMARY KEY,
 PASS VARCHAR(20)
 );
 
+CREATE TABLE DINING
+(
+ID VARCHAR(10) PRIMARY KEY,
+_Date DATE,
+Breakfast varchar(30),
+Lunch varchar(30),
+Dinner varchar(30),
+Subject varchar(30)
+);
+
+CREATE TABLE VISIT_TIMES (
+	static char(3),
+	mon varchar(50),
+    tue varchar(50),
+    wed varchar(50),
+    thu varchar(50),
+    fri varchar(50),
+    sat varchar(50),
+    sun varchar(50)
+);
+
 ALTER TABLE  RE_LATIVE ADD
 CONSTRAINT FK_INM_RLT
 FOREIGN KEY (InmateID)
@@ -215,6 +236,7 @@ INSERT `RE_LEASE` (`ID`, `InmateID`, `RELEASE_Date`, `Remarks`) VALUES (N'RL004'
 INSERT `MEDCHECKS` (`ID`, `InmateID`, `MEDCHECKS_Date`, `Urgency`, `Condi`, `Remarks`) VALUES (N'MC001', N'IM001', CAST(N'2016-10-02' AS Date), NULL, NULL, NULL);
 INSERT `MEDCHECKS` (`ID`, `InmateID`, `MEDCHECKS_Date`, `Urgency`, `Condi`, `Remarks`) VALUES (N'MC002', N'IM004', NULL, NULL, NULL, NULL);
 INSERT `MEDCHECKS` (`ID`, `InmateID`, `MEDCHECKS_Date`, `Urgency`, `Condi`, `Remarks`) VALUES (N'MC003', N'IM003', NULL, NULL, NULL, NULL);
+INSERT `DINING` (`ID`, `_Date`, `Breakfast`, `Lunch`, `Dinner`, `Subject`) VALUES (N'DN001', CAST(N'2016-6-13' AS Date), N'Milk', N'Bread', N'Bread', N'All');
 
 INSERT `ACCOUNT` (`ID`, `PASS`) VALUES ('DI001', 'DI001');
 INSERT `ACCOUNT` (`ID`, `PASS`) VALUES ('ER003', 'ER003');
